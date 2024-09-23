@@ -40,7 +40,8 @@ def get_questions_and_answers(doc: Document) -> List[Tuple[str, str]]:
             answer_groups = answer_match.groups()
             if len(answer_groups) == 2:
                 answer = answer_groups[1]
-                result.append((question, options[answer]))
+                # result.append((question, options[answer]))
+                result.append((question, answer))
                 question = None
                 options = {}
 
