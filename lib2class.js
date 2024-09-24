@@ -21,6 +21,10 @@ const libs = {
     高二: "中学",
     高三: "中学"
   },
+  supportedCompetition: {
+    小学组: "小学",
+    中学组: "中学"
+  },
   小学: [
     {
       question:
