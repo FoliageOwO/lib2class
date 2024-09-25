@@ -22,7 +22,7 @@ def get_questions_and_answers(doc: Document) -> List[Tuple[str, str]]:
 
         question_match = re.match("^(\d+[.。,，、:：．])(.*)", text)
         option_match = re.match("^([A-Z])([.。,，、．])(.*)", text)
-        answer_match = re.match("^(答案[:：])([A-Z])", text)
+        answer_match = re.match("^(答案[:：])([A-Z]+)", text)
 
         if question_match:
             question_groups = question_match.groups()
@@ -39,9 +39,11 @@ def get_questions_and_answers(doc: Document) -> List[Tuple[str, str]]:
         if answer_match:
             answer_groups = answer_match.groups()
             if len(answer_groups) == 2:
-                answer = answer_groups[1]
-                # result.append((question, options[answer]))
-                result.append((question, answer))
+                answers = list(answer_groups[1])
+                result.append(
+                    (question, "||".join([options[answer] for answer in answers]))
+                )
+                # result.append((question, answer))
                 question = None
                 options = {}
 
