@@ -20,7 +20,7 @@ def get_questions_and_answers(doc: Document) -> List[Tuple[str, str]]:
     for text in [p.text for p in doc.paragraphs]:
         text = text.strip()
 
-        question_match = re.match("^(\d+[.。,，、:：．])(.*)", text)
+        question_match = re.match("^(\\d+[.。,，、:：．])(.*)", text)
         option_match = re.match("^([A-Z])([.。,，、．])(.*)", text)
         answer_match = re.match("^(答案[:：])([A-Z]+)", text)
 
