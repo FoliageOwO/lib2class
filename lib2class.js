@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         lib2class
 // @namespace    http://tampermonkey.net/
-// @version      2024.10.06
+// @version      2024.10.06.1
 // @description  青骄第二课堂题库
 // @author       FoliageOwO
 // @grant        none
@@ -13,7 +13,7 @@ const libs = {
     // 六年级: "小学",
     // 七年级: "中学",
     // 八年级: "中学",
-    // 九年级: "中学",
+    九年级: "期末初三",
     // 初一: "中学",
     // 初二: "中学",
     初三: "期末初三",
